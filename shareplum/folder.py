@@ -84,7 +84,7 @@ class _Folder():
         url = self.site_url + f"/_api/web/GetFolderByServerRelativeUrl('{self._escaped_folder_name}')/Files/add(url='{escaped_file_name}',overwrite=true)"
         headers = {'X-RequestDigest': self.contextinfo['FormDigestValue']}
 
-        post(self._session, url=url, headers=headers, data=content, timeout=self.timeout)
+        post(self._session, url=url, headers=headers, data=content, timeout=None)
 
     def check_out(self, file_name):
         escaped_file_name = self._escape_name(file_name)
